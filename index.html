@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emailjs/  2.6.4/email.min.js">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Header -->
@@ -21,5 +26,458 @@
       </nav>
     </div>
   </header>
+  <!-- Intro Section with Tech Stack and Job Experience -->
+  <section id="intro" class="section h-screen flex flex-col justify-center items-center text-center px-6 bg-black text-white">
+  <h2 class="text-4xl md:text-5xl font-bold mb-4 animate-pulse" style="transform: perspective(700px) rotateX(8deg) rotateY(8deg); text-shadow: 0 0 12px #00f0ff, 0 0 22px #00f0ff;">
+    Hi, I'm Lohann
+  </h2>
+  <p id="typing-text" class="text-base md:text-lg text-gray-300 max-w-2xl leading-relaxed whitespace-nowrap overflow-hidden border-r-2 border-gray-300"></p>
+    <script>
+    const text = "Full-stack developer with a passion for creating impactful mobile and web experiences. I specialize in React Native, PHP, Firebase, and AI integration to bring smart, intuitive solutions to life.";
+    const typingElement = document.getElementById("typing-text");
+    let index = 0;
+    let deleting = false;
+
+    function typeEffect() {
+        if (!deleting && index <= text.length) {
+        typingElement.innerText = text.slice(0, index++);
+        } else if (deleting && index >= 0) {
+        typingElement.innerText = text.slice(0, index--);
+        }
+
+        if (index === text.length) {
+        deleting = true;
+        setTimeout(typeEffect, 2000);
+        } else if (deleting && index === 0) {
+        
+        deleting = false;
+        setTimeout(typeEffect, 1000);
+        } else {
+        setTimeout(typeEffect, deleting ? 40 : 60);
+        }
+    }
+
+    setInterval(() => {
+        index = 0;
+        deleting = false;
+        typeEffect();
+    }, 12000);
+
+    typeEffect();
+    </script>
+  </section>
+  <!-- About Section -->
+<section id="about" class="section py-20 px-6">
+  <div class="max-w-4xl mx-auto text-center">
+    <h3 class="text-3xl font-semibold mb-6 animate-bounce" style="transform: perspective(600px) rotateX(10deg) rotateY(10deg); text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;">About Me</h3>
+    <p class="text-lg text-gray-400 mb-4">
+      I’m a passionate developer with a strong foundation in mobile and web technologies. I build AI-powered solutions that are both human-centered and scalable.
+    </p>
+    <p class="text-lg text-gray-400 mb-4">
+      My journey started with community projects and freelancing, where I learned to adapt quickly and create digital experiences that truly serve real-world needs.
+    </p>
+    <p class="text-lg text-gray-400">
+      I focus on accessibility, performance, and creativity — always aiming to push the boundary of what tech can do for everyday life.
+    </p>
+  </div>
+</section>
+<!-- Services & Vision Section -->
+<section id="services" class="section py-20 px-6 bg-[#0e0e10] text-white">
+  <div class="max-w-6xl mx-auto text-center">
+    <h3 class="text-3xl font-semibold mb-8 animate-bounce" style="text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;">🛠️ My Services & Vision</h3>
+    
+    <!-- Services Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-16 text-left">
+      
+      <!-- Service Card -->
+      <div class="bg-gray-900 rounded-xl shadow-md p-6 hover:shadow-[#00f0ff] transition duration-300">
+        <h4 class="text-xl font-bold mb-2 text-[#00f0ff]">Mobile App Development</h4>
+        <p class="text-gray-400">Creating powerful, user-friendly mobile apps using React Native & Flutter—focused on real-world impact and scalability.</p>
+      </div>
+
+      <!-- Service Card -->
+      <div class="bg-gray-900 rounded-xl shadow-md p-6 hover:shadow-[#00f0ff] transition duration-300">
+        <h4 class="text-xl font-bold mb-2 text-[#00f0ff]">Web App Development</h4>
+        <p class="text-gray-400">Crafting responsive, fast, and accessible web applications with JavaScript, Tailwind, and modern backend tools.</p>
+      </div>
+
+      <!-- Service Card -->
+      <div class="bg-gray-900 rounded-xl shadow-md p-6 hover:shadow-[#00f0ff] transition duration-300">
+        <h4 class="text-xl font-bold mb-2 text-[#00f0ff]">AI Integration</h4>
+        <p class="text-gray-400">Enhancing apps with AI & automation through OpenAI APIs, Firebase ML, and smart system logic.</p>
+      </div>
+
+      <!-- Service Card -->
+      <div class="bg-gray-900 rounded-xl shadow-md p-6 hover:shadow-[#00f0ff] transition duration-300">
+        <h4 class="text-xl font-bold mb-2 text-[#00f0ff]">Database & Cloud</h4>
+        <p class="text-gray-400">Setting up secure, scalable infrastructure with Firebase, Oracle, and cloud-based solutions.</p>
+      </div>
+
+      <!-- Service Card -->
+      <div class="bg-gray-900 rounded-xl shadow-md p-6 hover:shadow-[#00f0ff] transition duration-300">
+        <h4 class="text-xl font-bold mb-2 text-[#00f0ff]">UI/UX Design</h4>
+        <p class="text-gray-400">Designing intuitive user experiences that drive engagement and deliver value with Figma & component libraries.</p>
+      </div>
+
+      <!-- Service Card -->
+      <div class="bg-gray-900 rounded-xl shadow-md p-6 hover:shadow-[#00f0ff] transition duration-300">
+        <h4 class="text-xl font-bold mb-2 text-[#00f0ff]">Team Collaboration Tools</h4>
+        <p class="text-gray-400">Building digital tools that empower teams to communicate, collaborate, and ship faster—from Trello clones to custom dashboards.</p>
+      </div>
+    </div>
+
+    <!-- Vision Statement -->
+    <div class="max-w-4xl mx-auto text-center">
+      <h4 class="text-2xl font-semibold mb-4 text-[#00f0ff]"> My Vision</h4>
+      <p class="text-lg text-gray-400 leading-relaxed">
+       My vision is to build digital experiences that are not just functional—but deeply meaningful.  
+       By blending the power of modern tools like React Native, Firebase, and AI, I aim to create scalable, intelligent, and human-centered applications.  
+       Whether it’s improving mental health, streamlining collaboration, or automating workflows, I’m passionate about using technology as a force for positive change—focused on real-world problems, accessibility, and lasting impact.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- Tech Stack Section -->
+<section id="tech-stack" class="section py-20 px-6"> 
+  <div class="max-w-6xl mx-auto text-center">
+    <h3 class="text-3xl font-semibold mb-12 text-white">Tech Stack & Tools</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="text-left flex items-center gap-4">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="w-6 h-6" alt="React Native"/>
+        <div class="w-full">
+          <p class="text-white mb-2">React Native</p>
+          <div class="w-full bg-gray-800 rounded-full h-4">
+            <div class="bg-[#00f0ff] h-4 rounded-full" style="width: 90%;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="text-left flex items-center gap-4">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="w-6 h-6" alt="JavaScript"/>
+        <div class="w-full">
+          <p class="text-white mb-2">JavaScript</p>
+          <div class="w-full bg-gray-800 rounded-full h-4">
+            <div class="bg-[#00f0ff] h-4 rounded-full" style="width: 85%;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="text-left flex items-center gap-4">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" class="w-6 h-6" alt="Tailwind CSS"/>
+        <div class="w-full">
+          <p class="text-white mb-2">Tailwind CSS</p>
+          <div class="w-full bg-gray-800 rounded-full h-4">
+            <div class="bg-[#00f0ff] h-4 rounded-full" style="width: 80%;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="text-left flex items-center gap-4">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" class="w-6 h-6" alt="Firebase"/>
+        <div class="w-full">
+          <p class="text-white mb-2">Firebase</p>
+          <div class="w-full bg-gray-800 rounded-full h-4">
+            <div class="bg-[#00f0ff] h-4 rounded-full" style="width: 75%;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="text-left flex items-center gap-4">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" class="w-6 h-6" alt="PHP"/>
+        <div class="w-full">
+          <p class="text-white mb-2">PHP</p>
+          <div class="w-full bg-gray-800 rounded-full h-4">
+            <div class="bg-[#00f0ff] h-4 rounded-full" style="width: 70%;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="text-left flex items-center gap-4">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" class="w-6 h-6" alt="C#"/>
+        <div class="w-full">
+          <p class="text-white mb-2">C#</p>
+          <div class="w-full bg-gray-800 rounded-full h-4">
+            <div class="bg-[#00f0ff] h-4 rounded-full" style="width: 65%;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="text-left flex items-center gap-4">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="w-6 h-6" alt="MySQL"/>
+        <div class="w-full">
+          <p class="text-white mb-2">MySQL</p>
+          <div class="w-full bg-gray-800 rounded-full h-4">
+            <div class="bg-[#00f0ff] h-4 rounded-full" style="width: 70%;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="text-left flex items-center gap-4">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-6 h-6" alt="Python"/>
+        <div class="w-full">
+          <p class="text-white mb-2">Python</p>
+          <div class="w-full bg-gray-800 rounded-full h-4">
+            <div class="bg-[#00f0ff] h-4 rounded-full" style="width: 75%;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="text-left flex items-center gap-4">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/openai/openai-original.svg" class="w-6 h-6" alt="AI / GPT APIs"/>
+        <div class="w-full">
+          <p class="text-white mb-2">AI / GPT APIs</p>
+          <div class="w-full bg-gray-800 rounded-full h-4">
+            <div class="bg-[#00f0ff] h-4 rounded-full" style="width: 80%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ <!--Tools Section -->
+<section id="tools" class="section py-20 px-6 bg-black">
+  <div class="max-w-6xl mx-auto text-center">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <div class="text-left flex items-center gap-4">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" class="w-6 h-6" alt="VS Code"/>
+        <div class="w-full">
+          <p class="text-white mb-2">VS Code</p>
+          <div class="w-full bg-gray-800 rounded-full h-4">
+            <div class="bg-[#00f0ff] h-4 rounded-full" style="width: 90%;"></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-left flex items-center gap-4">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" class="w-6 h-6" alt="Figma"/>
+        <div class="w-full">
+          <p class="text-white mb-2">Figma</p>
+          <div class="w-full bg-gray-800 rounded-full h-4">
+            <div class="bg-[#00f0ff] h-4 rounded-full" style="width: 80%;"></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-left flex items-center gap-4">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain.svg" class="w-6 h-6" alt="Trello"/>
+        <div class="w-full">
+          <p class="text-white mb-2">Trello</p>
+          <div class="w-full bg-gray-800 rounded-full h-4">
+            <div class="bg-[#00f0ff] h-4 rounded-full" style="width: 75%;"></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-left flex items-center gap-4">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" class="w-6 h-6" alt="Azure"/>
+        <div class="w-full">
+          <p class="text-white mb-2">Azure</p>
+          <div class="w-full bg-gray-800 rounded-full h-4">
+            <div class="bg-[#00f0ff] h-4 rounded-full" style="width: 70%;"></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-left flex items-center gap-4">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" class="w-6 h-6" alt="Git"/>
+        <div class="w-full">
+          <p class="text-white mb-2">Git</p>
+          <div class="w-full bg-gray-800 rounded-full h-4">
+            <div class="bg-[#00f0ff] h-4 rounded-full" style="width: 80%;"></div>
+          </div>
+        </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- Projects Section with Hover Overlay -->
+<section id="work" class="section py-20 px-6 bg-[#0e0e10]">
+  <div class="max-w-6xl mx-auto text-center">
+    <h3 class="text-3xl font-semibold mb-6 text-white animate-bounce" style="transform: perspective(600px) rotateX(10deg) rotateY(10deg); text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;">
+       Featured Projects
+    </h3>
+
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+
+        <!-- Project Slide -->
+        <div class="swiper-slide relative group">
+          <img src="ME1.PNG" alt="Mental Health App" class="rounded-lg shadow-md" />
+          <div class="absolute inset-0 bg-black bg-opacity-80 text-white opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-center items-center text-center p-6 rounded-lg">
+            <h4 class="text-xl font-bold mb-2">Mental Health App</h4>
+            <p class="text-sm mb-4 text-gray-300">React Native app using Firebase to support mental wellness and real-time mood tracking.</p>
+            <div class="flex gap-4">
+              <a href="https://studio--moodbloom-5r56a.us-central1.hosted.app/" target="_blank" class="bg-[#00f0ff] text-black px-4 py-2 rounded hover:bg-[#00c0cc] transition">Live Site</a>
+              <a href="https://github.com/your-repo1" target="_blank" class="border border-[#00f0ff] px-4 py-2 rounded hover:bg-[#00f0ff] hover:text-black transition">Source Code</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Slide -->
+        <div class="swiper-slide relative group">
+          <img src="https://via.placeholder.com/600x300" alt="AI Calendar Assistant" class="rounded-lg shadow-md" />
+          <div class="absolute inset-0 bg-black bg-opacity-80 text-white opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-center items-center text-center p-6 rounded-lg">
+            <h4 class="text-xl font-bold mb-2">AI Calendar Assistant</h4>
+            <p class="text-sm mb-4 text-gray-300">GPT-powered calendar tool that intelligently helps plan, predict, and adjust your schedule.</p>
+            <div class="flex gap-4">
+              <a href="https://example-live2.com" target="_blank" class="bg-[#00f0ff] text-black px-4 py-2 rounded hover:bg-[#00c0cc] transition">Live Site</a>
+              <a href="https://github.com/your-repo2" target="_blank" class="border border-[#00f0ff] px-4 py-2 rounded hover:bg-[#00f0ff] hover:text-black transition">Source Code</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CollabConnect -->
+        <div class="swiper-slide relative group">
+          <img src="cc1.PNG" alt="CollabConnect" class="rounded-lg shadow-md" />
+          <div class="absolute inset-0 bg-black bg-opacity-80 text-white opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-center items-center text-center p-6 rounded-lg">
+            <h4 class="text-xl font-bold mb-2">CollabConnect</h4>
+            <p class="text-sm mb-4 text-gray-300">Team collaboration tool with AI optimization, real-time chat, and dashboards.
+              this was built by the Eclectic Dreamers team.For a school assignment</p>
+            </p>
+            <div class="flex gap-4">
+              <a href="https://collabconnect-4apv.onrender.com" target="_blank" class="bg-[#00f0ff] text-black px-4 py-2 rounded hover:bg-[#00c0cc] transition">Live Site</a>
+              <a href="https://github.com/KingGradi/CollabConnect" target="_blank" class="border border-[#00f0ff] px-4 py-2 rounded hover:bg-[#00f0ff] hover:text-black transition">Source Code</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PDF to PPT Tool -->
+        <div class="swiper-slide relative group">
+          <img src="https://via.placeholder.com/600x300" alt="PDF to PPT Tool" class="rounded-lg shadow-md" />
+          <div class="absolute inset-0 bg-black bg-opacity-80 text-white opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-center items-center text-center p-6 rounded-lg">
+            <h4 class="text-xl font-bold mb-2">PDF to PPT AI Tool</h4>
+            <p class="text-sm mb-4 text-gray-300">Automated tool that converts any PDF to a clean PowerPoint presentation using AI formatting.</p>
+            <div class="flex gap-4">
+              <a href="https://example-live4.com" target="_blank" class="bg-[#00f0ff] text-black px-4 py-2 rounded hover:bg-[#00c0cc] transition">Live Site</a>
+              <a href="https://github.com/your-repo4" target="_blank" class="border border-[#00f0ff] px-4 py-2 rounded hover:bg-[#00f0ff] hover:text-black transition">Source Code</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Swiper JS Script -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper(".mySwiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    loop: false,
+    mousewheel: true,
+    coverflowEffect: {
+      rotate: 30,
+      stretch: 0,
+      depth: 200,
+      modifier: 1,
+      slideShadows: true,
+    },
+  });
+</script>
+
+  
+
+  <!-- Contact Section -->
+  <section id="contact" class="section py-20 px-6 bg-gray-900">
+  <div class="max-w-4xl mx-auto text-center">
+    <h3 class="text-3xl font-semibold mb-6 text-white">Get in Touch</h3>
+    <p class="text-lg text-gray-400 mb-6 max-w-xl mx-auto">
+      I’m always open to new opportunities and collaborations. Whether you have a project in mind or just want to say hi, feel free to reach out!
+    </p>
+
+    <div class="flex justify-center gap-6 mb-8 flex-wrap">
+      <span class="px-4 py-2 rounded-full bg-[#00f0ff] text-black font-semibold cursor-pointer hover:bg-[#00c0cc] transition">
+        Freelancing
+      </span>
+      <span class="px-4 py-2 rounded-full bg-[#00f0ff] text-black font-semibold cursor-pointer hover:bg-[#00c0cc] transition">
+        Hiring
+      </span>
+      <span class="px-4 py-2 rounded-full bg-[#00f0ff] text-black font-semibold cursor-pointer hover:bg-[#00c0cc] transition">
+        Collaborations
+      </span>
+      <span class="px-4 py-2 rounded-full bg-[#00f0ff] text-black font-semibold cursor-pointer hover:bg-[#00c0cc] transition">
+        Opportunities
+      </span>
+    </div>
+
+    <form id="contact-form" class="space-y-6 max-w-md mx-auto">
+  <input
+    type="text"
+    name="user_name"
+    placeholder="Your Name"
+    required
+    class="w-full p-3 bg-gray-800 border border-gray-700 rounded text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00f0ff]"
+  />
+  <input
+    type="email"
+    name="user_email"
+    placeholder="Your Email"
+    required
+    class="w-full p-3 bg-gray-800 border border-gray-700 rounded text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00f0ff]"
+  />
+  <textarea name="message"rows="5"placeholder="Your Message"required
+    class="w-full p-3 bg-gray-800 border border-gray-700 rounded text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00f0ff]"
+  ></textarea>
+  <button
+    type="submit"
+    class="w-full py-3 bg-[#00f0ff] text-black font-semibold rounded hover:bg-[#00c0cc] transition duration-300"
+  >
+    Send Message
+  </button>
+</form>
+<p id="form-message" class="text-green-400 mt-4 hidden">Message sent successfully!</p>
+
+    </form>
+
+    <div class="mt-10 flex justify-center items-center gap-6">
+      <a href="https://wa.me/0658794376" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+       Chat on WhatsApp
+      </a>
+          <path
+            d="M20.52 3.48A11.95 11.95 0 0012 0a11.93 11.93 0 00-9.17 4.82 11.88 11.88 0 00-1.85 11.18L0 24l8.09-2.14a11.94 11.94 0 004.57.94h.01c6.63 0 12-5.37 12-12 0-3.18-1.24-6.17-3.65-8.31zM12 21.78a9.72 9.72 0 01-4.96-1.43l-.35-.21-4.8 1.27 1.28-4.68-.23-.38a9.78 9.78 0 012.05-11.97A9.83 9.83 0 0112 2.22c5.44 0 9.87 4.43 9.87 9.88 0 5.45-4.43 9.68-9.87 9.68zm5.23-7.24c-.28-.14-1.65-.81-1.9-.9-.25-.1-.43-.14-.62.14s-.71.9-.87 1.08c-.16.18-.31.2-.58.07a7.3 7.3 0 01-2.15-1.32 8.18 8.18 0 01-1.52-1.9c-.16-.28-.02-.43.13-.57.13-.13.28-.31.42-.47.14-.16.18-.28.28-.47.1-.18.05-.34-.02-.47-.07-.14-.62-1.5-.85-2.06-.22-.54-.44-.47-.62-.48h-.53c-.18 0-.47.07-.72.34s-.94.92-.94 2.25c0 1.33.96 2.62 1.1 2.8.14.18 1.9 2.9 4.6 4.06a16.13 16.13 0 002.17 1.12c.29.12.57.1.78.06.24-.05.74-.3.95-.6.21-.3.3-.56.21-.6z"
+          />
+        </svg>
+        
+      </a>
+    </div>
+  </div>
+</section>
+<script>
+  const form = document.getElementById("contact-form");
+  const message = document.getElementById("form-message");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    emailjs.sendForm("service_gg7l28a", "template_dh2f02d", this)
+      .then(() => {
+        message.classList.remove("hidden");
+        form.reset();
+      }, (error) => {
+        alert("Failed to send message. Please try again later.");
+        console.error("EmailJS Error:", error);
+      });
+  });
+</script>
+
+  
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    document.querySelectorAll('.section').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 </body>
+<footer class="bg-black text-gray-500 text-center py-6 text-sm">
+  © 2025 Lohann Doualla Ekwe. All rights reserved.
+</footer>
 </html>
