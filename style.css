@@ -2,20 +2,37 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Make the layout slightly more compact */
+html { font-size:15px }
+.section{padding-top:2rem !important; padding-bottom:2rem !important}
+header > div{padding-top:.5rem; padding-bottom:.5rem}
+nav{gap:.75rem}
+.max-w-7xl .grid{gap:1rem}
+
+/* tighter UI */
+.hero-title{font-size:2rem}
+.hero-image{height:18rem !important}
+.project-card img{height:10.5rem !important}
+.project-card .p-6{padding:1rem}
+.btn{padding:.45rem .8rem; font-size:.95rem}
+.section-title{font-size:1.25rem}
+
+
 :root{
-  --bg:#0b0b0d;
-  --surface:#0f1012;
-  --accent:#00f0ff;
-  --muted:#9ca3af;
-}
+  --bg:#f7f8fb;
+  --surface: rgba(255,255,255,0.62);
+  --accent:#6c63ff;
+  --accent-2:#00b7d9;
+  --muted:#6b7280;
+  --text:#0b1220;
 
 *{box-sizing:border-box}
 head{background-color:var(--bg)}
 #tools{background-color:var(--bg); color:white; padding:2rem}
 
 body {
-  background: linear-gradient(180deg,var(--bg), #060607 90%);
-  color: #e6eef1;
+  background: var(--bg);
+  color: var(--text);
   font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
   transition: background 0.5s, color 0.5s;
   margin: 0;
@@ -23,13 +40,25 @@ body {
   -webkit-font-smoothing:antialiased;
 }
 
+
 a { color: inherit; text-decoration:none; transition:color .2s ease }
-a:not(.whatsapp-btn):hover{ color:var(--accent) }
+.hover-accent:hover{ color:var(--accent) }
+
+/* utility for accent text */
+.text-accent{ color:var(--accent) }
+
+.hover-shadow-accent:hover{ box-shadow:0 12px 30px rgba(124,226,255,0.12) }
 
 /* Utility buttons */
-.btn{display:inline-block;padding:.6rem 1rem;border-radius:9999px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;font-weight:600}
-.btn:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,0.6)}
-.btn-primary{background:var(--accent);color:#000}
+.btn{display:inline-block;padding:.6rem 1rem;border-radius:9999px;border:1px solid rgba(15,23,42,0.06);background:transparent;color:inherit;font-weight:600}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(15,23,42,0.06)}
+.btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;box-shadow:0 10px 30px rgba(108,99,255,0.12)}
+.bg-accent{background:var(--accent)}
+
+/* focus ring for inputs */
+.focus-ring-accent:focus{outline:none; box-shadow:0 0 0 6px rgba(124,226,255,0.06); border-color:var(--accent)}
+
+.btn-primary:hover{filter:brightness(0.96); transform:translateY(-2px)}
 
 .section {
   opacity: 0;
@@ -58,7 +87,7 @@ a:not(.whatsapp-btn):hover{ color:var(--accent) }
 
 /* Contact section background */
 #contact {
-  background-color: #0e0e10; /* same as body background */
+  background: transparent;
 }
 
 /* WhatsApp button styles: rounded background */
@@ -82,8 +111,8 @@ a:not(.whatsapp-btn):hover{ color:var(--accent) }
 }
 
 /* Hero and section headings */
-.hero-title{letter-spacing:-0.5px;color:#fff;background:linear-gradient(90deg,var(--accent),#66f7ff);-webkit-background-clip:text;background-clip:text;filter:drop-shadow(0 6px 18px rgba(0,240,255,0.06))}
-.section-title{color:#e6eef1;opacity:.96}
+.hero-title{letter-spacing:-0.5px;color:#111;background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;filter:drop-shadow(0 8px 20px rgba(108,99,255,0.08))}
+.section-title{color:var(--text);opacity:.95}
 
 @media (min-width:768px){
   .swiper-slide{height:320px}
@@ -94,3 +123,42 @@ a:not(.whatsapp-btn):hover{ color:var(--accent) }
 #services .grid > div:hover{transform:translateY(-6px); box-shadow:0 18px 40px rgba(2,6,23,0.7)}
 
 nav a:focus{outline:2px solid rgba(0,240,255,0.12);outline-offset:3px;border-radius:6px}
+
+/* Header / Logo */
+.logo .w-10{box-shadow:0 6px 20px rgba(0,240,255,0.06)}
+
+.logo-badge{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#001018}
+
+/* Project cards */
+.project-card{background:var(--surface);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid rgba(15,23,42,0.04);transition:transform .28s ease, box-shadow .28s;color:var(--text);border-radius:1rem;overflow:hidden}
+.bg-surface{background:var(--surface)}
+
+.service-card{background:var(--surface); box-shadow:0 6px 24px rgba(2,6,23,0.6); transition:transform .28s ease, box-shadow .28s}
+.service-card:hover{transform:translateY(-6px); box-shadow:0 28px 48px rgba(2,6,23,0.6)}
+.project-card:hover{transform:translateY(-8px); box-shadow:0 24px 40px rgba(15,23,42,0.08)}
+
+/* Mobile menu */
+#mobile-menu{background:linear-gradient(180deg,var(--bg), rgba(5,5,8,0.6));}
+
+/* small responsive tweaks */
+@media (max-width:768px){
+  .hero-title{font-size:1.6rem}
+}
+
+/* Icon tweaks */
+.btn i, .service-card i, footer i { color: inherit; vertical-align:middle }
+.fa-lg{line-height:1}
+
+/* Glassmorphism utilities and light-theme mappings */
+.glass{background:var(--surface);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(15,23,42,0.04);box-shadow:0 8px 30px rgba(10,15,30,0.06);border-radius:12px}
+
+/* map some dark-theme utility classes to light equivalents to preserve markup */
+.text-white{ color: var(--text) !important }
+.text-gray-400{ color: var(--muted) !important }
+.text-gray-300{ color: var(--muted) !important }
+.bg-gray-900{ background: var(--surface) !important; box-shadow:0 6px 24px rgba(10,15,30,0.04) }
+.bg-black{ background: transparent !important }
+
+.glass-header{ background: rgba(255,255,255,0.7); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); border-bottom:1px solid rgba(15,23,42,0.06) }
+
+.project-card img{ filter: saturate(.98) contrast(.98) }
