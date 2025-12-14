@@ -188,37 +188,37 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-16 text-left">
       
       <!-- Service Card -->
-      <div class="service-card rounded-xl p-6">
+      <div class="service-card rounded-xl p-6 reveal-up">
         <h4 class="text-xl font-bold mb-2 text-accent"><i class="fa-solid fa-mobile-screen-button mr-2"></i>Mobile App Development</h4>
         <p class="text-gray-400">Creating powerful, user-friendly mobile apps using React Native & Flutter—focused on real-world impact and scalability.</p>
       </div>
 
       <!-- Service Card -->
-      <div class="service-card rounded-xl p-6">
+      <div class="service-card rounded-xl p-6 reveal-up">
         <h4 class="text-xl font-bold mb-2 text-accent"><i class="fa-solid fa-browser mr-2"></i>Web App Development</h4>
         <p class="text-gray-400">Crafting responsive, fast, and accessible web applications with JavaScript, Tailwind, and modern backend tools.</p>
       </div>
 
       <!-- Service Card -->
-      <div class="service-card rounded-xl p-6">
+      <div class="service-card rounded-xl p-6 reveal-up">
         <h4 class="text-xl font-bold mb-2 text-accent"><i class="fa-solid fa-robot mr-2"></i>AI Integration</h4>
         <p class="text-gray-400">Enhancing apps with AI & automation through OpenAI APIs, Firebase ML, and smart system logic.</p>
       </div>
 
       <!-- Service Card -->
-      <div class="service-card rounded-xl p-6">
+      <div class="service-card rounded-xl p-6 reveal-up">
         <h4 class="text-xl font-bold mb-2 text-accent"><i class="fa-solid fa-database mr-2"></i>Database & Cloud</h4>
         <p class="text-gray-400">Setting up secure, scalable infrastructure with Firebase, Oracle, and cloud-based solutions.</p>
       </div>
 
       <!-- Service Card -->
-      <div class="service-card rounded-xl p-6">
+      <div class="service-card rounded-xl p-6 reveal-up">
         <h4 class="text-xl font-bold mb-2 text-accent"><i class="fa-solid fa-pen-ruler mr-2"></i>UI/UX Design</h4>
         <p class="text-gray-400">Designing intuitive user experiences that drive engagement and deliver value with Figma & component libraries.</p>
       </div>
 
       <!-- Service Card -->
-      <div class="service-card rounded-xl p-6">
+      <div class="service-card rounded-xl p-6 reveal-up">
         <h4 class="text-xl font-bold mb-2 text-accent"><i class="fa-solid fa-users-gear mr-2"></i>Team Collaboration Tools</h4>
         <p class="text-gray-400">Building digital tools that empower teams to communicate, collaborate, and ship faster—from Trello clones to custom dashboards.</p>
       </div>
@@ -391,7 +391,7 @@
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Project Card -->
-        <article class="project-card bg-surface rounded-2xl overflow-hidden shadow-md">
+        <article class="project-card bg-surface rounded-2xl overflow-hidden shadow-md reveal-up">
           <img src="ME1.PNG" alt="Mental Health App" class="w-full h-44 object-cover">
           <div class="p-6">
             <h4 class="text-xl font-semibold mb-2">Mental Health App</h4>
@@ -403,7 +403,7 @@
           </div>
         </article>
 
-        <article class="project-card bg-surface rounded-2xl overflow-hidden shadow-md">
+        <article class="project-card bg-surface rounded-2xl overflow-hidden shadow-md reveal-up">
           <img src="https://via.placeholder.com/600x300" alt="AI Calendar" class="w-full h-44 object-cover">
           <div class="p-6">
             <h4 class="text-xl font-semibold mb-2">AI Calendar Assistant</h4>
@@ -415,7 +415,7 @@
           </div>
         </article>
 
-        <article class="project-card bg-surface rounded-2xl overflow-hidden shadow-md">
+        <article class="project-card bg-surface rounded-2xl overflow-hidden shadow-md reveal-up">
           <img src="cc1.PNG" alt="CollabConnect" class="w-full h-44 object-cover">
           <div class="p-6">
             <h4 class="text-xl font-semibold mb-2">CollabConnect</h4>
@@ -525,6 +525,9 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
+          // Stagger reveal for child elements with motion classes
+          const revealItems = entry.target.querySelectorAll('.reveal-up, .fade-in');
+          revealItems.forEach((el, i) => setTimeout(() => el.classList.add('visible'), i * 80));
         }
       });
     }, {
@@ -548,5 +551,54 @@
         </div>
       </div>
     </footer>
+    <div id="page-overlay" aria-hidden="true"></div>
+    <script>
+      // Page transition handler for internal anchor links
+      (function(){
+        const overlay = document.getElementById('page-overlay');
+
+        function showOverlay() {
+          overlay.classList.add('active');
+        }
+        function hideOverlay() {
+          overlay.classList.remove('active');
+        }
+
+        // Handle internal anchors: fade overlay, then navigate/scroll
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+          a.addEventListener('click', function(e){
+            const href = a.getAttribute('href');
+            if (!href || href === '#') return; // leave alone
+            e.preventDefault();
+            const target = document.querySelector(href);
+            showOverlay();
+            setTimeout(() => {
+              if (target) {
+                target.scrollIntoView({behavior:'smooth'});
+                // hide overlay after a short delay so the reveal looks smooth
+                setTimeout(hideOverlay, 700);
+              } else {
+                // fallback navigate
+                window.location.hash = href;
+                hideOverlay();
+              }
+            }, 160);
+          });
+        });
+
+        // Simple hero image subtle parallax on mouse move
+        const heroImg = document.querySelector('.hero-image');
+        if (heroImg) {
+          const parent = heroImg.parentElement;
+          parent.addEventListener('mousemove', e => {
+            const rect = parent.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width - 0.5;
+            const y = (e.clientY - rect.top) / rect.height - 0.5;
+            heroImg.style.transform = `translate(${x * 6}px, ${y * 6}px) scale(1.02)`;
+          });
+          parent.addEventListener('mouseleave', ()=> heroImg.style.transform = 'none');
+        }
+      })();
+    </script>
   </body>
   </html>
