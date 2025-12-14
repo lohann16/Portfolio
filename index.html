@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <meta name="description" content="Portfolio of Lohann Doualla Ekwe — Full-stack developer focused on mobile and web apps, AI integrations, and thoughtful UX.">
     <title>My Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -18,7 +19,7 @@
 </head>
 <body>
     <!-- Header -->
-  <header class="sticky top-0 bg-[#0e0e10] z-50 border-b border-gray-800">
+  <header class="sticky top-0 z-50 border-b border-transparent bg-black/60 backdrop-blur-sm">
     <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
       <h1 class="text-xl font-semibold">Daniel Emmanuel Lohann Doualla Ekwe</h1>
       <nav class="space-x-6 text-sm font-medium">
@@ -33,9 +34,13 @@
   </header>
   <!-- Intro Section with Tech Stack and Job Experience -->
   <section id="intro" class="section h-screen flex flex-col justify-center items-center text-center px-6 bg-black text-white">
-  <h2 class="text-4xl md:text-5xl font-bold mb-4 animate-pulse" style="transform: perspective(700px) rotateX(8deg) rotateY(8deg); text-shadow: 0 0 12px #00f0ff, 0 0 22px #00f0ff;">
+  <h2 class="text-4xl md:text-5xl font-bold mb-4 hero-title">
     Hi, I'm Lohann
   </h2>
+  <div class="flex gap-4 mt-6">
+    <a href="#work" class="btn btn-primary">View Work</a>
+    <a href="#contact" class="btn">Contact Me</a>
+  </div>
   <p id="typing-text" class="text-base md:text-lg text-gray-300 max-w-2xl leading-relaxed whitespace-nowrap overflow-hidden border-r-2 border-gray-300"></p>
     <script>
     const text = "Full-stack developer with a passion for creating impactful mobile and web experiences. I specialize in React Native, PHP, Firebase, and AI integration to bring smart, intuitive solutions to life.";
@@ -74,7 +79,7 @@
   <!-- About Section -->
 <section id="about" class="section py-20 px-6">
   <div class="max-w-4xl mx-auto text-center">
-    <h3 class="text-3xl font-semibold mb-6 animate-bounce" style="transform: perspective(600px) rotateX(10deg) rotateY(10deg); text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;">About Me</h3>
+    <h3 class="text-3xl font-semibold mb-6 section-title">About Me</h3>
     <p class="text-lg text-gray-400 mb-4">
       I’m a passionate developer with a strong foundation in mobile and web technologies. I build AI-powered solutions that are both human-centered and scalable.
     </p>
@@ -89,7 +94,7 @@
 <!-- Services & Vision Section -->
 <section id="services" class="section py-20 px-6 bg-[#0e0e10] text-white">
   <div class="max-w-6xl mx-auto text-center">
-    <h3 class="text-3xl font-semibold mb-8 animate-bounce" style="text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;">🛠️ My Services & Vision</h3>
+    <h3 class="text-3xl font-semibold mb-8 section-title">🛠️ My Services & Vision</h3>
     
     <!-- Services Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-16 text-left">
@@ -147,7 +152,7 @@
 <!-- Tech Stack Section -->
 <section id="tech-stack" class="section py-20 px-6"> 
   <div class="max-w-6xl mx-auto text-center">
-    <h3 class="text-3xl font-semibold mb-12 text-white">Tech Stack & Tools</h3>
+    <h3 class="text-3xl font-semibold mb-12 text-white section-title">Tech Stack & Tools</h3>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <div class="text-left flex items-center gap-4">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="w-6 h-6" alt="React Native"/>
@@ -294,9 +299,9 @@
   <!-- Projects Section with Hover Overlay -->
 <section id="work" class="section py-20 px-6 bg-[#0e0e10]">
   <div class="max-w-6xl mx-auto text-center">
-    <h3 class="text-3xl font-semibold mb-6 text-white animate-bounce" style="transform: perspective(600px) rotateX(10deg) rotateY(10deg); text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;">
+     <h3 class="text-3xl font-semibold mb-6 text-white section-title">
        Featured Projects
-    </h3>
+     </h3>
 
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
@@ -432,9 +437,7 @@
 </form>
 <p id="form-message" class="text-green-400 mt-4 hidden">Message sent successfully!</p>
 
-    </form>
-
-    <div class="mt-10 flex justify-center items-center gap-6">
+  <div class="mt-10 flex justify-center items-center gap-6">
       <a href="https://wa.me/0658794376" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
        Chat on WhatsApp
       </a>
@@ -480,9 +483,10 @@
     document.querySelectorAll('.section').forEach(section => {
       observer.observe(section);
     });
-  </script>
-</body>
-<footer class="bg-black text-gray-500 text-center py-6 text-sm">
-  © 2025 Lohann Doualla Ekwe. All rights reserved.
-</footer>
-</html>
+    </script>
+
+    <footer class="bg-black text-gray-500 text-center py-6 text-sm">
+      © 2025 Lohann Doualla Ekwe. All rights reserved.
+    </footer>
+  </body>
+  </html>
