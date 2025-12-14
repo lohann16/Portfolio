@@ -50,6 +50,13 @@
     
 </head>
 <body>
+  <!-- Splash screen -->
+  <div id="splash" aria-hidden="true">
+    <div class="splash-inner" role="img" aria-label="Loading">
+      <div class="splash-badge">LD</div>
+      <div class="splash-copy">Lohann Doualla — Portfolio</div>
+    </div>
+  </div>
     <!-- Header -->
   <header class="sticky top-0 z-50 border-b border-transparent glass-header">
     <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
@@ -556,6 +563,7 @@
       // Page transition handler for internal anchor links
       (function(){
         const overlay = document.getElementById('page-overlay');
+        const splash = document.getElementById('splash');
 
         function showOverlay() {
           overlay.classList.add('active');
@@ -597,6 +605,30 @@
             heroImg.style.transform = `translate(${x * 6}px, ${y * 6}px) scale(1.02)`;
           });
           parent.addEventListener('mouseleave', ()=> heroImg.style.transform = 'none');
+        }
+
+        // Splash hide logic: prefer reduced-motion; hide after load + short delay
+        function hideSplash() {
+          if (!splash) return;
+          if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            splash.classList.add('splash-hidden');
+            setTimeout(() => splash.remove(), 80);
+            return;
+          }
+          // Add hidden class to trigger fade then remove
+          splash.classList.add('splash-hidden');
+          splash.addEventListener('transitionend', () => {
+            try { splash.remove(); } catch (e) {}
+          }, { once: true });
+        }
+
+        // Hide splash on window load (images/fonts ready). Fallback timeout 1.2s.
+        if (document.readyState === 'complete') {
+          setTimeout(hideSplash, 240);
+        } else {
+          window.addEventListener('load', () => setTimeout(hideSplash, 240));
+          // In case load never fires quickly, ensure removal
+          setTimeout(hideSplash, 1200);
         }
       })();
     </script>
