@@ -79,13 +79,13 @@
       </nav>
 
       <div class="hidden md:flex items-center gap-3 text-gray-300">
-        <a href="https://github.com" target="_blank" aria-label="GitHub" class="hover:text-white"><i class="fa-brands fa-github fa-lg"></i></a>
-        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" class="hover:text-white"><i class="fa-brands fa-linkedin-in fa-lg"></i></a>
+        <a href="https://github.com" target="_blank" aria-label="GitHub" rel="noopener noreferrer" class="hover:text-white"><i class="fa-brands fa-github fa-lg"></i></a>
+        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer" class="hover:text-white"><i class="fa-brands fa-linkedin-in fa-lg"></i></a>
       </div>
 
-      <button id="mobile-menu-btn" class="md:hidden p-2 rounded text-gray-300">
+      <button id="mobile-menu-btn" type="button" aria-label="Toggle mobile menu" class="md:hidden p-2 rounded text-gray-300">
         <svg id="menu-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z"/></svg>
-        <svg id="menu-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" style="display:none"><path d="M18.3 5.71L12 12l6.3 6.29-1.41 1.42L10.59 13.41 4.29 19.71 2.88 18.3 9.17 12 2.88 5.71 4.29 4.29 10.59 10.59 16.88 4.29z"/></svg>
+        <svg id="menu-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="hidden-svg"><path d="M18.3 5.71L12 12l6.3 6.29-1.41 1.42L10.59 13.41 4.29 19.71 2.88 18.3 9.17 12 2.88 5.71 4.29 4.29 10.59 10.59 16.88 4.29z"/></svg>
       </button>
     </div>
     <div id="mobile-menu" class="md:hidden hidden px-6 pb-6">
@@ -95,7 +95,7 @@
         <a href="#about" class="hover-accent">About</a>
         <a href="#contact" class="hover-accent">Contact</a>
         <a href="#services" class="hover-accent">Services</a>
-        <a href="https://example.com/resume.pdf" class="btn" target="_blank">Download CV</a>
+        <a href="https://example.com/resume.pdf" class="btn" target="_blank" rel="noopener">Download CV</a>
       </nav>
     </div>
   </header>
@@ -107,7 +107,7 @@
         <p class="text-lg md:text-xl text-gray-400 max-w-2xl">Full-stack developer building mobile and web apps with thoughtful UX, scalable backends, and AI-powered features.</p>
 
         <div class="flex gap-3">
-          <a href="https://example.com/resume.pdf" target="_blank" class="btn btn-primary">Download CV</a>
+          <a href="https://example.com/resume.pdf" target="_blank" rel="noopener" class="btn btn-primary">Download CV</a>
           <a href="#contact" class="btn">Contact</a>
         </div>
 
@@ -134,9 +134,9 @@
           <img src="ME1.PNG" alt="Profile" class="w-full h-96 hero-image object-cover rounded-lg block">
         </div>
       </div>
-    
+    </div>
+    <p id="typing-text" class="text-base md:text-lg text-gray-300 max-w-2xl leading-relaxed whitespace-nowrap overflow-hidden border-r-2 border-gray-300"></p>
   </section>
-  <p id="typing-text" class="text-base md:text-lg text-gray-300 max-w-2xl leading-relaxed whitespace-nowrap overflow-hidden border-r-2 border-gray-300"></p>
     <script>
     const text = "Full-stack developer with a passion for creating impactful mobile and web experiences. I specialize in React Native, PHP, Firebase, and AI integration to bring smart, intuitive solutions to life.";
     const typingElement = document.getElementById("typing-text");
@@ -170,7 +170,7 @@
 
     typeEffect();
     </script>
-  </section>
+  
   <!-- About Section -->
 <section id="about" class="section py-20 px-6">
   <div class="max-w-4xl mx-auto text-center">
@@ -404,7 +404,7 @@
             <h4 class="text-xl font-semibold mb-2">Mental Health App</h4>
             <p class="text-sm text-gray-300 mb-4">React Native app using Firebase to support mental wellness and real-time mood tracking.</p>
             <div class="flex gap-3">
-              <a href="https://studio--moodbloom-5r56a.us-central1.hosted.app/" target="_blank" class="btn btn-primary"><i class="fa-solid fa-up-right-from-square mr-2"></i>Live Demo</a>
+              <a href="https://studio--moodbloom-5r56a.us-central1.hosted.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i class="fa-solid fa-up-right-from-square mr-2"></i>Live Demo</a>
               <a href="project1.html" class="btn"><i class="fa-solid fa-circle-info mr-2"></i>Details</a>
             </div>
           </div>
@@ -416,7 +416,7 @@
             <h4 class="text-xl font-semibold mb-2">AI Calendar Assistant</h4>
             <p class="text-sm text-gray-300 mb-4">GPT-powered calendar tool that intelligently helps plan and adjust schedules.</p>
             <div class="flex gap-3">
-              <a href="https://example-live2.com" target="_blank" class="btn btn-primary"><i class="fa-solid fa-up-right-from-square mr-2"></i>Live Demo</a>
+              <a href="https://example-live2.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i class="fa-solid fa-up-right-from-square mr-2"></i>Live Demo</a>
               <a href="project2.html" class="btn"><i class="fa-solid fa-circle-info mr-2"></i>Details</a>
             </div>
           </div>
@@ -428,7 +428,7 @@
             <h4 class="text-xl font-semibold mb-2">CollabConnect</h4>
             <p class="text-sm text-gray-300 mb-4">Team collaboration tool with AI optimization, real-time chat, and dashboards.</p>
             <div class="flex gap-3">
-              <a href="https://collabconnect-4apv.onrender.com" target="_blank" class="btn btn-primary"><i class="fa-solid fa-up-right-from-square mr-2"></i>Live Demo</a>
+              <a href="https://collabconnect-4apv.onrender.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i class="fa-solid fa-up-right-from-square mr-2"></i>Live Demo</a>
               <a href="project1.html" class="btn"><i class="fa-solid fa-circle-info mr-2"></i>Details</a>
             </div>
           </div>
@@ -498,8 +498,8 @@
         <h4 class="text-xl font-semibold mb-3">Let's Connect</h4>
         <p class="text-gray-400 mb-4">Prefer a direct message? You can reach me on the platforms below or send an email and I’ll reply within 48 hours.</p>
         <div class="flex gap-3 mb-4">
-          <a href="https://linkedin.com" target="_blank" class="btn"><i class="fa-brands fa-linkedin-in mr-2"></i>LinkedIn</a>
-          <a href="https://github.com" target="_blank" class="btn"><i class="fa-brands fa-github mr-2"></i>GitHub</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="btn"><i class="fa-brands fa-linkedin-in mr-2"></i>LinkedIn</a>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn"><i class="fa-brands fa-github mr-2"></i>GitHub</a>
         </div>
         <a href="mailto:you@example.com" class="text-sm text-gray-300">you@example.com</a>
       </div>
@@ -552,9 +552,9 @@
       <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
         <div>© 2025 Lohann Doualla Ekwe. All rights reserved.</div>
         <div class="flex gap-4 items-center justify-center">
-          <a href="https://github.com" target="_blank" class="text-gray-600 hover:text-black"><i class="fa-brands fa-github mr-2"></i>GitHub</a>
-          <a href="https://linkedin.com" target="_blank" class="text-gray-600 hover:text-black"><i class="fa-brands fa-linkedin-in mr-2"></i>LinkedIn</a>
-          <a href="https://instagram.com" target="_blank" class="text-gray-600 hover:text-black"><i class="fa-brands fa-instagram mr-2"></i>Instagram</a>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-black"><i class="fa-brands fa-github mr-2"></i>GitHub</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-black"><i class="fa-brands fa-linkedin-in mr-2"></i>LinkedIn</a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-black"><i class="fa-brands fa-instagram mr-2"></i>Instagram</a>
         </div>
       </div>
     </footer>
