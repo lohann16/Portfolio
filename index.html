@@ -111,7 +111,7 @@
           <a href="#contact" class="btn">Contact</a>
         </div>
 
-        <!-- typing text inserted below by script -->
+        <p id="typing-text" class="text-base md:text-lg text-gray-300 max-w-2xl leading-relaxed border-r-2 border-gray-300 pr-2 typing"></p>
 
         <div class="mt-8 grid grid-cols-3 gap-4 text-center">
           <div>
@@ -135,39 +135,30 @@
         </div>
       </div>
     </div>
-    <p id="typing-text" class="text-base md:text-lg text-gray-300 max-w-2xl leading-relaxed whitespace-nowrap overflow-hidden border-r-2 border-gray-300"></p>
   </section>
     <script>
     const text = "Full-stack developer with a passion for creating impactful mobile and web experiences. I specialize in React Native, PHP, Firebase, and AI integration to bring smart, intuitive solutions to life.";
     const typingElement = document.getElementById("typing-text");
     let index = 0;
-    let deleting = false;
+    let typingTimer = null;
 
     function typeEffect() {
-        if (!deleting && index <= text.length) {
-        typingElement.innerText = text.slice(0, index++);
-        } else if (deleting && index >= 0) {
-        typingElement.innerText = text.slice(0, index--);
-        }
-
-        if (index === text.length) {
-        deleting = true;
-        setTimeout(typeEffect, 2000);
-        } else if (deleting && index === 0) {
-        
-        deleting = false;
-        setTimeout(typeEffect, 1000);
+      if (index <= text.length) {
+        typingElement.innerText = text.slice(0, index);
+        index++;
+        if (index <= text.length) {
+          typingTimer = setTimeout(typeEffect, 60);
         } else {
-        setTimeout(typeEffect, deleting ? 40 : 60);
+          // Finished typing — remove caret animation after a short pause
+          setTimeout(() => {
+            typingElement.classList.remove('typing');
+          }, 500);
         }
+      }
     }
 
-    setInterval(() => {
-        index = 0;
-        deleting = false;
-        typeEffect();
-    }, 12000);
-
+    // Ensure caret is visible at start (element already has class 'typing' in markup)
+    typingElement.classList.add('typing');
     typeEffect();
     </script>
   
@@ -246,8 +237,8 @@
 
 <!-- Tech Stack Section -->
 <section id="tech-stack" class="section py-20 px-6"> 
-  <div class="max-w-6xl mx-auto text-center">
-    <h3 class="text-3xl font-semibold mb-12 text-white section-title">Tech Stack & Tools</h3>
+  <div class="max-w-6xl mx-auto text-center glass p-8">
+    <h3 class="text-3xl font-semibold mb-6 text-white section-title">Tech Stack & Tools</h3>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <div class="text-left flex items-center gap-4">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="w-6 h-6" alt="React Native"/>

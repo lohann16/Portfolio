@@ -130,6 +130,14 @@ a { color: inherit; text-decoration:none; transition:color .2s ease }
   #page-overlay{transition:none}
 }
 
+/* Typing caret */
+#typing-text.typing { border-right: 2px solid rgba(107,112,128,0.6); padding-right: .5rem; display:inline-block; white-space:normal; overflow:visible; }
+@keyframes typing-caret { 50% { border-color: transparent; } }
+#typing-text.typing { animation: typing-caret 1s steps(1) infinite; }
+@media (prefers-reduced-motion: reduce){
+  #typing-text.typing { animation:none; border-color:rgba(107,112,128,0.6); }
+}
+
 /* Splash screen */
 #splash{position:fixed;inset:0;z-index:90;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,var(--surface),rgba(255,255,255,0.96));backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);transition:opacity .6s ease, transform .6s ease;opacity:1}
 #splash.splash-hidden{opacity:0;pointer-events:none;transform:scale(.995)}
