@@ -5,8 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <meta name="description" content="Portfolio of Lohann Doualla Ekwe — Full-stack developer focused on mobile and web apps, AI integrations, and thoughtful UX.">
+    <meta name="description" content="Hi, I'm Lohann — I build mobile & web apps with thoughtful UX and AI-powered features. Explore projects, certificates, and ways to get in touch.">
     <title>My Portfolio</title>
+
+    <!-- Performance: preconnect to fonts & CDNs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- SEO / Social -->
+    <link rel="canonical" href="https://your-domain.com/">
+    <meta property="og:title" content="Lohann Doualla — Full-stack Developer">
+    <meta property="og:description" content="I build mobile & web apps with thoughtful UX and AI-powered features — see projects, certificates, and contact info.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com/">
+    <meta property="og:image" content="https://your-domain.com/ME1.PNG">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@your_twitter_handle">
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Lohann Doualla",
+      "url": "https://your-domain.com",
+      "sameAs": ["https://github.com/yourhandle","https://linkedin.com/in/yourprofile"],
+      "jobTitle": "Full-stack Developer",
+      "description": "Full-stack developer focused on mobile and web apps, AI integrations, and thoughtful UX."
+    }
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="style.css" />
@@ -101,12 +131,14 @@
       </nav>
     </div>
   </header>
+  <a href="#main-content" class="skip-link">Skip to content</a>
   <!-- Intro / Home Section -->
+  <main id="main-content">
   <section id="intro" class="section pt-12 pb-16">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-6">
       <div class="space-y-6 text-left">
         <h1 class="hero-title text-3xl md:text-5xl font-extrabold">Hi, I’m <span class="text-accent">Lohann Doualla</span></h1>
-        <p class="text-lg md:text-xl text-gray-400 max-w-2xl">Full-stack developer building mobile and web apps with thoughtful UX, scalable backends, and AI-powered features.</p>
+        <p class="text-lg md:text-xl text-gray-400 max-w-2xl">Hi — I’m Lohann. I build mobile and web apps with thoughtful UX and smart AI features that solve real problems.</p>
 
         <div class="flex gap-3">
           <a href="assets/Resume.pdf" class="btn btn-primary" download="Lohann_Doualla_Resume.pdf" aria-label="Download CV">Download CV</a>
@@ -139,7 +171,7 @@
     </div>
   </section>
     <script>
-    const text = "Full-stack developer with a passion for creating impactful mobile and web experiences. I specialize in React Native, PHP, Firebase, and AI integration to bring smart, intuitive solutions to life.";
+    const text = "I design and build mobile and web apps — from idea to launch — using React Native, Firebase, and AI to create products that are fast, reliable, and easy to use.";
     const typingElement = document.getElementById("typing-text");
     let index = 0;
     let typingTimer = null;
@@ -436,7 +468,7 @@
           <img src="ME1.PNG" alt="Mental Health App" class="w-full h-44 object-cover">
           <div class="p-6">
             <h4 class="text-xl font-semibold mb-2">Mental Health App</h4>
-            <p class="text-sm text-gray-300 mb-4">React Native app using Firebase to support mental wellness and real-time mood tracking.</p>
+            <p class="text-sm text-gray-300 mb-4">A React Native app built with Firebase to support mental wellness, offering real-time mood tracking and supportive features for users.</p>
             <div class="flex gap-3">
               <a href="https://studio--moodbloom-5r56a.us-central1.hosted.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i class="fa-solid fa-up-right-from-square mr-2"></i>Live Demo</a>
               <a href="project1.html" class="btn"><i class="fa-solid fa-circle-info mr-2"></i>Details</a>
@@ -448,7 +480,7 @@
           <img src="https://via.placeholder.com/600x300" alt="AI Calendar" class="w-full h-44 object-cover">
           <div class="p-6">
             <h4 class="text-xl font-semibold mb-2">AI Calendar Assistant</h4>
-            <p class="text-sm text-gray-300 mb-4">GPT-powered calendar tool that intelligently helps plan and adjust schedules.</p>
+            <p class="text-sm text-gray-300 mb-4">A GPT-powered calendar assistant that helps plan, adjust, and keep your schedule on track with smart suggestions.</p>
             <div class="flex gap-3">
               <a href="https://example-live2.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i class="fa-solid fa-up-right-from-square mr-2"></i>Live Demo</a>
               <a href="project2.html" class="btn"><i class="fa-solid fa-circle-info mr-2"></i>Details</a>
@@ -460,7 +492,7 @@
           <img src="cc1.PNG" alt="CollabConnect" class="w-full h-44 object-cover">
           <div class="p-6">
             <h4 class="text-xl font-semibold mb-2">CollabConnect</h4>
-            <p class="text-sm text-gray-300 mb-4">Team collaboration tool with AI optimization, real-time chat, and dashboards.</p>
+            <p class="text-sm text-gray-300 mb-4">A collaboration platform with real-time chat, dashboards, and AI-powered tools to help teams stay aligned and productive.</p>
             <div class="flex gap-3">
               <a href="https://collabconnect-4apv.onrender.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i class="fa-solid fa-up-right-from-square mr-2"></i>Live Demo</a>
               <a href="project1.html" class="btn"><i class="fa-solid fa-circle-info mr-2"></i>Details</a>
@@ -473,7 +505,7 @@
           <img src="https://via.placeholder.com/600x300?text=AI+Chatbot" alt="AI Chatbot" class="w-full h-44 object-cover">
           <div class="p-6">
             <h4 class="text-xl font-semibold mb-2">AI Chatbot</h4>
-            <p class="text-sm text-gray-300 mb-4">GPT-powered conversational assistant with context awareness, web integrations, and a customizable flow builder for websites and apps.</p>
+            <p class="text-sm text-gray-300 mb-4">A GPT-powered chatbot that remembers context, connects to your tools, and can be embedded into websites or apps quickly.</p>
             <div class="flex gap-3">
               <a href="https://example-chatbot.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i class="fa-solid fa-up-right-from-square mr-2"></i>Live Demo</a>
               <a href="project4.html" class="btn"><i class="fa-solid fa-circle-info mr-2"></i>Details</a>
@@ -540,9 +572,9 @@
     Send Message
   </button>
 </form>
-<p id="form-message" class="text-green-400 mt-4 hidden">Message sent successfully!</p>
+<p id="form-message" class="text-green-400 mt-4 hidden">Thanks — your message was sent!</p>
       <div class="glass rounded-xl p-6">
-        <h4 class="text-xl font-semibold mb-3">Let's Connect</h4>
+        <h4 class="text-xl font-semibold mb-3">Let's connect</h4>
         <p class="text-gray-400 mb-4">Prefer a direct message? You can reach me on the platforms below or send an email and I’ll reply within 48 hours.</p>
         <div class="flex gap-3 mb-4">
           <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="btn"><i class="fa-brands fa-linkedin-in mr-2"></i>LinkedIn</a>
@@ -594,6 +626,8 @@
     
     // (Removed skill animation observer since skill bars were replaced with tech pills)
     </script>
+
+    </main>
 
     <footer class="bg-transparent text-gray-600 text-center py-6 text-sm">
       <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">

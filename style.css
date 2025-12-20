@@ -160,6 +160,13 @@ a { color: inherit; text-decoration:none; transition:color .2s ease }
 
 nav a:focus{outline:2px solid rgba(0,240,255,0.12);outline-offset:3px;border-radius:6px}
 
+/* Skip to content link (visually hidden, visible on focus) */
+.skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:999}
+.skip-link:focus, .skip-link:focus-visible{position:fixed;left:1rem;top:1rem;width:auto;height:auto;padding:.5rem .75rem;background:var(--surface);color:var(--text);border-radius:6px;box-shadow:0 12px 30px rgba(10,15,30,0.08);outline:none}
+
+/* Stronger focus-visible for interactive elements */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible, .tech-pill:focus-visible, .btn:focus-visible, [role="button"]:focus-visible{outline:3px solid rgba(108,99,255,0.9);outline-offset:3px;border-radius:6px}
+
 /* Header / Logo */
 .logo .w-10{box-shadow:0 6px 20px rgba(0,240,255,0.06)}
 
